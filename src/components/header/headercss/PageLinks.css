@@ -1,5 +1,33 @@
-
-
-.Page-Link-Container{
-    background-color: aqua;
+:root{
+    --COLOUR-ONE: #FFFFFF;
 }
+
+/* Styles for the links in the header section*/
+.Page-Link-Container{
+    width: 100px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left:20px;
+}
+
+.Page-Link{
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--COLOUR-ONE);
+    padding-bottom: 5px;
+}
+
+.Page-Link:hover{
+    opacity: 0.5;
+}
+
+.underline{
+    width: 80%;
+    border: 2px solid var(--COLOUR-ONE);
+}
+

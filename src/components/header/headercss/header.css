@@ -1,4 +1,11 @@
 
+/* Styles for the Header section*/
 .Header{
     width: auto;
+    height: 100px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30%;
 }
