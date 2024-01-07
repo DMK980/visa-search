@@ -5,8 +5,7 @@ import "./headercss/header.css"
 export const Header = (props)=>{
     return (
         <div className="Header">
-            <Link page = "Search"/>
-            <Link page = "Stats"/> 
+            <Link/>
             <DarkMode 
              checked = {props.checked} 
              onChange={props.onChange}/>

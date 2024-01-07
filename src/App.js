@@ -1,4 +1,5 @@
 import { Header } from './components/header/header';
+import { Search } from './pages/search';
 import './App.css';
 import {useState} from "react";
 
@@ -16,6 +17,7 @@ function App() {
        checked = {lightmode} 
        onChange={change}
        />
+      <Search/>
     </div>
   );
 }
