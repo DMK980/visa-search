@@ -1,8 +1,8 @@
-:root{
-    --COLOUR-ONE: #FFFFFF;
-}
+
 
 /* Styles for the links in the header section*/
+
+/* link container */
 .Page-Link-Container{
     width: 100px;
     height: fit-content;
