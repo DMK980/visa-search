@@ -20,6 +20,7 @@
     justify-content: center;
     color: var(--COLOUR-ONE);
     padding-bottom: 5px;
+    text-decoration: none;
 }
 
 .Page-Link:hover{

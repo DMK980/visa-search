@@ -2,26 +2,38 @@
 /* CSS for the light and dark mode switch*/
 
 .toggle-container{
-    width: 100px;
-    height: 50px;
-    background-color: aqua;
+    margin-left: 20px;
 }
 
 .toggle{
-    visibility:hidden;
+    visibility: hidden;
     position: absolute;
-    background-color: black;
+    
+}
+
+.toggle + .toggle-label{
     display: flex;
 }
 
-.toggle::before{
-    width:100px;
-    height: 100px;
-    background-color: blue;
+.toggle-label::before{
+    content:" ";
+    width:50px;
+    height: 25px;
+    background-color: var(--COLOUR-ONE);
 }
-.toggle::after{
-    width:100px;
-    height: 100px;
-    background-color: black;
+.toggle-label::after{
+    content: " ";
+    width:25px;
+    height: 23px;
+    background-color: var(--COLOUR-TWO);
+    position: absolute;
+    margin-left: 1px;
+    margin-top: 1px;
+    transition: 0.1s ease-in-out;
+}
+
+.toggle:checked + .toggle-label::after{
+    transform: translateX(93%);
+    transition: 0.1s ease-in-out;
 }
 

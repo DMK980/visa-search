@@ -1,12 +1,18 @@
 import "./headercss/darkmodeswitch.css"
 
-export const DarkMode = ()=>{
+export const DarkMode = (props)=>{
     return (
         <div className="toggle-container">
             <input 
              type="checkbox"
-             className="toggle">
+             id = "toggle"
+             className="toggle"
+             checked={props.checked}
+             onChange={props.onChange}
+             >
             </input>
-        </div>
+            <label htmlFor="toggle"className="toggle-label">
+             </label>
+        </div> 
     )
 }
