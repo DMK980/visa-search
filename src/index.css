@@ -1,6 +1,7 @@
 :root{
   --COLOUR-ONE: #FFFFFF;
   --COLOUR-TWO: #1A181C;
+  --COLOUR-THREE: #FF0000;
 }
 
 [data-theme="dark-mode"]{
@@ -17,7 +18,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
