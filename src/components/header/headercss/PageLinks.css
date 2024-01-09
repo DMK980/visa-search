@@ -1,38 +1,28 @@
 
 
 /* Styles for the links in the header section*/
-
-/* link container */
 .links{
     display: flex;
     flex-direction: row;
 }
-.Page-Link-Container{
-    width: 100px;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /*margin-left:20px;*/
-}
 
 .Page-Link{
-    font-size: 20px;
+    font-size: 1.2rem;
     width: fit-content;
-    display: flex;
-    justify-content: center;
     color: var(--COLOUR-ONE);
-    padding: 5px;
+    padding: 0.5rem;
     text-decoration: none;
+    margin: 0 1rem;
 }
 
 .link-one{
-    border-bottom: 4px solid var(--COLOUR-ONE);
+    border-bottom: 2px solid var(--COLOUR-ONE);
 }
-.link-two:hover, .link-one:hover{
-    border-bottom: 4px solid var(--COLOUR-ONE);
+
+.Page-Link:hover{
+    border-bottom: 2px solid var(--COLOUR-ONE);
     transition: 0.09s ease-in-out
 }
+
 
 

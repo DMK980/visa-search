@@ -2,14 +2,12 @@
 /* CSS for the light and dark mode switch*/
 
 .toggle-container{
-    margin-left: 20px;
-    margin-right: 20%;
+    margin: 0 2rem 0 0;
 }
 
 .toggle{
     visibility: hidden;
-    position: absolute;
-    
+    position: absolute; 
 }
 
 .toggle + .toggle-label{
@@ -18,18 +16,18 @@
 
 .toggle-label::before{
     content:" ";
-    width:50px;
-    height: 25px;
+    width:2.5rem;
+    height: 1.5rem;
     background-color: var(--COLOUR-ONE);
 }
 .toggle-label::after{
     content: " ";
-    width:25px;
-    height: 23px;
+    width:1.20rem;
+    height: 1.3rem;
     background-color: var(--COLOUR-TWO);
     position: absolute;
-    margin-left: 1px;
-    margin-top: 1px;
+    margin-left: 0.1rem;
+    margin-top: 0.1rem;
     transition: 0.1s ease-in-out;
 }
 

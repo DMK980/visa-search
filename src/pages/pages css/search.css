@@ -1,14 +1,15 @@
 
 .body-container{
     width: fit-content;
-    margin-top: 10%;
+    margin: 0 auto;
 }
 
 .headline{
     width: fit-content;
     color: var(--COLOUR-THREE);
-    font-size: 50px;
+    font-size: 2rem;
     border-bottom: 3px solid var(--COLOUR-ONE);
+    font-weight: 700;
 }
 
 .bullet-points{
@@ -26,6 +27,7 @@
     width: 20em;
     margin-left:30% ;
     height: auto;
+
 }
 .company-name-input{
     height: 2em;
