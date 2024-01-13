@@ -7,12 +7,12 @@
 }
 
 .Page-Link{
-    font-size: 1.2rem;
     width: fit-content;
     color: var(--COLOUR-ONE);
     padding: 0.5rem;
     text-decoration: none;
     margin: 0 1rem;
+    background-color: blue;
 }
 
 .link-one{
