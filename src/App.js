@@ -5,19 +5,8 @@ import {useState} from "react";
 
 function App() {
 
-  const [lightmode, setlightmode] = useState(false);
-
-  const change = ()=>{
-    setlightmode(!lightmode)
-  }
-
   return (
-    <div className="App"data-theme={lightmode ?"dark-mode":""}>
-      <Header 
-       checked = {lightmode} 
-       onChange={change}
-       />
-      <Search/>
+    <div className="App">
     </div>
   );
 }
