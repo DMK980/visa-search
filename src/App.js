@@ -1,12 +1,11 @@
-import { Header } from './components/header/header';
-import { Search } from './pages/search';
 import './App.css';
-import {useState} from "react";
+import { LandingPage } from './Pages/Landing';
 
 function App() {
 
   return (
     <div className="App">
+      <LandingPage/>
     </div>
   );
 }
