@@ -1,4 +1,5 @@
-import { Navbar } from "../components/Header/Header"
+import { Navbar } from "../../components/Header/Header"
+//import landing from "./landing.module.css"
 
 export const LandingPage = ()=>{
     return (
@@ -13,9 +14,9 @@ export const LandingPage = ()=>{
                     <li>Data Collected from the <span>official UK government website.</span></li>
                 </ul>
                 <div>
-                    <input/>
-                    <input type="submit">SEARCH</input>
-                </div>
+                    <input type="text"/>
+                    <button>SEARCH</button>
+                </div> 
             </section>
         </>
     )
