@@ -1,4 +1,8 @@
+
 import Header from "./Header.module.css"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faSun} from "@fortawesome/free-solid-svg-icons"
+
 
 export const Navbar = ()=>{
     return (
@@ -7,16 +11,15 @@ export const Navbar = ()=>{
             <ul className={Header.navbar_list}>
 
                 <li className={Header.links}>
-                    <a href="/">Search</a>
+                    <a className={Header.links_a}href="/">Search</a>
                 </li>
 
                 <li className={Header.links}>
-                    <a href="/">Stats</a>
+                    <a className={Header.links_a}href="/">Stats</a>
                 </li>
 
                 <li className={Header.links}>
-                    <input id = "toggle"type="checkbox"></input>
-                    <label htmlFor="toggle"></label>
+                    <a href="/"><FontAwesomeIcon icon={faSun} style={{color: "#ffffff",}} /></a> 
                 </li>
 
             </ul>
