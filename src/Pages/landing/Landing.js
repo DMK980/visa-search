@@ -1,5 +1,6 @@
 import { Navbar } from "../../components/Header/Header"
-//import landing from "./landing.module.css"
+import landing from "./landing.module.css"
+import { Search } from "../../components/Search/search"
 
 export const LandingPage = ()=>{
     return (
@@ -7,16 +8,13 @@ export const LandingPage = ()=>{
             <header>
                 <Navbar/>
             </header>
-            <section>
-                <h1>VISA SPONSORSHIP SEARCH</h1>
-                <ul>
-                    <li>A directory of comapnies that are licensed to sponsor workers in the UK.</li>
-                    <li>Data Collected from the <span>official UK government website.</span></li>
-                </ul>
-                <div>
-                    <input type="text"/>
-                    <button>SEARCH</button>
-                </div> 
+            <section className={landing.section}>
+                <h1 className={landing.title}>VISA SPONSORSHIP SEARCH</h1>
+                <ul className={landing.info}>
+                    <li className={landing.info_point_1}>I. A directory of comapnies that are licensed to sponsor workers in the UK.</li>
+                    <li className={landing.info_point_2}>II. Data Collected from the <span className={landing.span}>official UK government website.</span></li>
+                </ul> 
+                <Search/>
             </section>
         </>
     )

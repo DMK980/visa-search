@@ -1,38 +1,49 @@
+/* Styling for the Header and Navigation */
 .navbar{
     width: 100%;
     padding: 1rem 0;
+    
+    display: flex;
+    justify-content: flex-end;
 }
 
 .navbar_list{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 1rem;
+    width: fit-content;
+    gap: 2rem;
+    
 }
 
 .links{
     list-style-type: none;
+    
 }
+
 .links_a{
     text-decoration: none;
     font-size: var(--font-size-2);
 }
-.toggle{
-    visibility: hidden;
+
+.links_a_search{
+    border-bottom: 2px solid var(--COLOUR-ONE);
 }
-.toggle_lable::before{
-    content: " ";
-    position: absolute;
-    width: 3.125rem;
-    height: 1.5625rem;
-    background-color: var(--COLOUR-ONE);
+
+.input{
+    display: none;
 }
-.toggle_lable::after{
-    content: " ";
-    position: absolute;
-    top: .0625rem;
-    width: 1.5625rem;
-    height: 1.4375rem;
-    background-color: black;
+
+.toggle_dark{
+   display: none;
 }
+
+.input:checked ~ .toggle_light{
+    display: none;
+}
+
+.input:checked ~ .toggle_dark{
+    display:contents;
+}
+
 
