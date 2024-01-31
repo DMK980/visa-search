@@ -1,35 +1,46 @@
 /* Style for the Search component */
 .input_container{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 0;
+    width:fit-content;
     margin: 0 auto;
-    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     /* background-color: aquamarine; */
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto ;
+    grid-template-areas: "input search";
+    justify-content: center;
 }
 .input{
     background-color: var(--COLOUR-TWO);
     border: 2px solid var(--COLOUR-ONE);
-    height: 2.25rem;
-    width: min(100%,20rem);
-    align-self: center;
-    overflow:auto;
-    margin: 0 auto;
     padding: 1rem;
+    grid-area: input;
+    width: min(30rem,30vw);
+    min-width: 20rem;
 }
 .input::placeholder{
     text-align: center;
 }
 .search{
-    margin-top: .625rem;
-    padding: .25em 1.5em;
-    width: min(100%,20rem);
-    align-self: center; 
     background-color: var(--COLOUR-TWO);
     font-weight: 800;
     font-size: var(--font-size-2);
     border: 2px solid var(--COLOUR-ONE);
+    grid-area: search;
+    /* width: max(100%,15rem); */
+    max-width: 30rem;
+    min-width: 10rem;
 }
 .search:hover{
     border: 3px solid lightblue;
+}
+
+@media screen and (max-width: 700px){
+    .input_container{
+        grid-template-areas: "input""search";
+    }
+    .search{
+        padding: .5rem 0;
+    }
 }

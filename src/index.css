@@ -4,9 +4,10 @@
 :root{
 
   /* Colour Scheme */
-  --COLOUR-ONE: #FFFFFF;
-  --COLOUR-TWO: #1A181C;
-  --COLOUR-THREE: #FF0000;
+  --COLOUR-ONE: #2e3532;
+  --COLOUR-TWO: #d3efbd;
+  --COLOUR-THREE: #8b2635;
+  --COLOUR-FOUR: #d2d4c8;
 
   --font-size-1: 1rem;
   --font-size-2: 1.25rem;
@@ -20,14 +21,13 @@
   box-sizing: border-box;
 }
 body{
-  background-color: var(--COLOUR-TWO);
+  background-color: var(--COLOUR-ONE);
   font-family: 'Inter', sans-serif;
   height: 100vh;
 }
 
 #root{
-  width: min(1100px,80%);
-  margin: 0 auto;
+  height: 100vh;
 }
 
 
