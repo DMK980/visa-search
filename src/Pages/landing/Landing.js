@@ -8,9 +8,7 @@ export const LandingPage = ()=>{
         <div className={landing.landingpage}>
             <HeaderComponent/>
             <section className={landing.section}>
-                <Search/>
             </section>
-            <Footer/>
         </div>
     )
 }

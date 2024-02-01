@@ -1,13 +1,73 @@
-/* Styling for the Header and Navigation */
 .Header{
-    width: 100%;
-    background-color: aqua;
+    background-color: var(--COLOUR-TWO);
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding:1rem;
+    margin-top: 3rem;
+    width: min(80rem,100%);
+    /* z-index: 999; */
 }
-
-
-
-
+.title{
+    color: var(--COLOUR-THREE);
+    font-size: var(--font-size-4);
+    text-align: center;
+    margin-right: auto;
+    /* border-bottom: 2px solid var(--COLOUR-ONE); */
+}
+/* Navigation on big screens */
+.navbar_list{
+    display: flex;
+    background-color: var(--COLOUR-TWO);
+    list-style: none;
+    text-align: center;
+}
+.links{
+    margin: 0 1rem;
+    font-size: var(--font-size-3);
+    border-bottom: 2px solid var(--COLOUR-TWO);
+}
+.links_a{
+    text-decoration: none;
+    color: var(--COLOUR-ONE);
+}
+.links_a:hover{
+    color: var(--COLOUR-THREE);
+}
+.links:nth-child(1):hover,.links:nth-child(2):hover{
+    border-bottom: 2px solid var(--COLOUR-ONE);
+}
+.hamburger_toggle,.hamburger{
+    display: none;
+}
+/* Navigation on small screens  */
+@media screen and (max-width:768px) {
+    .navbar{
+        position: absolute;
+        top: -3.75rem; 
+        right:0;
+        display: none;
+    }
+    .navbar_list{
+        flex-direction: column;
+        padding: 1rem 0.75rem;
+        text-align: center;
+        background-color: var(--COLOUR-TWO);
+    }
+    .links{
+        margin: 1rem 0;
+    }
+    .hamburger_toggle:checked ~ nav {
+        transform: translateY(10rem);
+        display: block;
+    }
+    .hamburger{
+        display: block;
+    }
+    .hamburger:hover{
+        color: var(--COLOUR-THREE);
+    }
+}
 /* toggle styling and logic */
 .input{
     display: none;
@@ -22,8 +82,3 @@
 .input:checked ~ .toggle_dark{
     display:contents;
 }
-
-
-
-
-
