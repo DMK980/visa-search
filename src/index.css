@@ -10,7 +10,7 @@
   --COLOUR-FOUR: #d2d4c8;
 
   --font-size-1: 1rem;
-  --font-size-2: 1.25rem;
+  --font-size-2: clamp(0.75rem,4vw,1.25rem);
   --font-size-3: clamp(1rem,2.5vw,1.5625rem);
   --font-size-4:clamp(1.25rem,5vw,2.1875rem);/*2.1875rem;*/
 }
