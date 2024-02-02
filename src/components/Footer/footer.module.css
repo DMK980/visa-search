@@ -1,0 +1,31 @@
+/* Footer container styling */
+.footer_container{
+    display: flex;
+    justify-content: space-around;
+}
+.footer{
+    background-color: var(--COLOUR-TWO);
+    width: 100%;
+    max-width: 90rem;
+    display: flex;
+    flex-direction: column;
+}
+/* Copywrite section styling */
+.copyrightSection{
+    text-align: center;
+    padding: 2rem;
+}
+/* Info section styling */
+.footerInfoSection{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    align-items: center;
+}
+/* Links styling  */
+.githublink{
+    width: 1rem;
+}
+.copyrightlink{
+    font-size: 1rem;
+}
