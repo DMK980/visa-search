@@ -2,6 +2,7 @@ import landing from "./landing.module.css"
 import { Search } from "../../components/Search/search"
 import { HeaderComponent } from "../../components/Header/Header"
 import { Footer } from "../../components/Footer/footer"
+import { Table } from "../../components/Table/table"
 
 export const LandingPage = ()=>{
     return (
@@ -9,6 +10,7 @@ export const LandingPage = ()=>{
             <HeaderComponent/>
             <section className={landing.section}>
                 <Search/>
+                <Table/>
             </section>
             <Footer/>
         </div>
