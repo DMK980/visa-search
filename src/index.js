@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import { LandingPage } from './Pages/landing/Landing';
 import { SearchPage } from './Pages/search/searchpage';
+import { createStore} from "react-redux";
+
+const store = createStore();
 
 const router = createBrowserRouter([
   {
@@ -16,7 +18,6 @@ const router = createBrowserRouter([
     element: <SearchPage/>
   }
 ]);
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
