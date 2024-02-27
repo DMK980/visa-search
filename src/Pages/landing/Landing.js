@@ -4,6 +4,7 @@ import { HeaderComponent } from "../../components/Header/Header"
 import { Footer } from "../../components/Footer/footer"
 
 
+
 export const LandingPage = ()=>{
     return (
         <div className={landing.landingpage}>

@@ -4,9 +4,6 @@ import './index.css';
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import { LandingPage } from './Pages/landing/Landing';
 import { SearchPage } from './Pages/search/searchpage';
-import { createStore} from "react-redux";
-
-const store = createStore();
 
 const router = createBrowserRouter([
   {
@@ -16,6 +13,10 @@ const router = createBrowserRouter([
   {
     path : "/search",
     element: <SearchPage/>
+  },
+  {
+    path : "/search/:companyname",
+    element: <SearchPage/>
   }
 ]);
 
@@ -23,7 +24,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}/>
-  </React.StrictMode> 
+  </React.StrictMode>
 );
 
 

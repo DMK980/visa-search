@@ -6,6 +6,7 @@ import { Table } from "../../components/Table/table"
 
 
 export const SearchPage = ()=>{
+
     return(
         <div className={searchpage.searchpage}>
             <HeaderComponent/>
