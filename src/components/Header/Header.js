@@ -26,17 +26,17 @@ export const HeaderComponent = ()=>{
                         <li className={Header.links}>
                             {/* Light and Dark toggle */}
                             <input className={Header.input}id="toggle"type="checkbox"/>
-                            <label className={Header.toggle_light}for="toggle">
+                            <label className={Header.toggle_light}htmlFor="toggle">
                                 <FontAwesomeIcon icon={faSun} style={{color: "#2e3532"}} />
                             </label> 
-                            <label className={Header.toggle_dark}for="toggle">
+                            <label className={Header.toggle_dark}htmlFor="toggle">
                                 <FontAwesomeIcon icon={faMoon} style={{color: "#2e3532"}} />
                             </label> 
                         </li>
                     </ul>
                 </nav>
                 {/* Hamburger Menu */}
-                <label for="hamburger"><FontAwesomeIcon className={Header.hamburger}icon={faBars} style={{color: "#2e3532",}} /></label>
+                <label htmlFor="hamburger"><FontAwesomeIcon className={Header.hamburger}icon={faBars} style={{color: "#2e3532",}} /></label>
             </div>
         </header>
     )
