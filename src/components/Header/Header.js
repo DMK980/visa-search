@@ -18,11 +18,11 @@ export const HeaderComponent = ()=>{
                     <ul className={Header.navbar_list}> 
                         {/* LINKS TO OTHER PAGES */}
                         <li className={Header.links}>
-                            <a className={`${Header.links_a} ${Header.links_a_search}`}href="/">Search</a>
+                            <a className={`${Header.links_a} ${Header.links_a_search}`}href="/">Home</a>
                         </li>
-                        <li className={Header.links}>
+                        {/* <li className={Header.links}>
                             <a className={`${Header.links_a} ${Header.links_a_submit}`}href="/Stats">Stats</a>
-                        </li>
+                        </li> */}
                         <li className={Header.links}>
                             {/* Light and Dark toggle */}
                             <input className={Header.input}id="toggle"type="checkbox"/>

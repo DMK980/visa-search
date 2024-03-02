@@ -10,7 +10,6 @@ export const inputslice = createSlice({
             state.value = action.payload
         }
     }
-
 })
 
 export const {inputchange} = inputslice.actions;
