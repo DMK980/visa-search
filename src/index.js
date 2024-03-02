@@ -7,8 +7,6 @@ import { SearchPage } from './Pages/search/searchpage';
 import { Provider } from 'react-redux';
 import store from './store/store';
 
-
-
 const router = createBrowserRouter([
   {
     path : "/",

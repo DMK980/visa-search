@@ -8,9 +8,9 @@ export const Table = ()=>{
                 <div className={table.companyContainer}>
                     {data.map((company,index)=>{
                         return (
-                            <div className={table.companyRow}>
-                                <input className={table.checkbox}type="checkbox" id={`info${index}`}/>
-                                <label className={table.companyName}for={`info${index}`}><span className={table.companyIndex}>{index + 1}.</span>{company.Organisation_Name}</label>
+                            <div key={index}className={table.companyRow}>
+                                <input key={index}className={table.checkbox}type="checkbox" id={`info${index}`}/>
+                                <label className={table.companyName}htmlFor={`info${index}`}><span className={table.companyIndex}>{index + 1}.</span>{company.Organisation_Name}</label>
                                 <div className={table.companyInfo}>
                                     <p className={`${table.companystat} ${table.companystat1}`}><span className={table.companyInfoHeading}>Route: </span>{company.Route}</p>                                
                                     <p className={`${table.companystat} ${table.companystat2}`}><span className={table.companyInfoHeading}>City: </span>{company.Town_City}</p>
