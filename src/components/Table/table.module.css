@@ -68,9 +68,7 @@
     display: inline-flex;
     
 }
-.checkbox:checked .companyRow{
-    border-color: var(--COLOUR-THREE);
-}
+
 .companyRow:hover , .companyName{
     border-color: var(--COLOUR-THREE);
 }
