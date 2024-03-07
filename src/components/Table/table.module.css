@@ -54,6 +54,7 @@
     font-size: var(--font-size-2);
     padding: .5rem .5rem .1rem .25rem;
 }
+
 .companystat1{
     margin-top: 1rem;
 }
@@ -65,7 +66,15 @@
 }
 .checkbox:checked + label + .companyInfo{
     display: inline-flex;
+    
 }
+.checkbox:checked .companyRow{
+    border-color: var(--COLOUR-THREE);
+}
+.companyRow:hover , .companyName{
+    border-color: var(--COLOUR-THREE);
+}
+
 /* Styling for the company info on the Right big screens */
 .tableSideInfoContainer{
     border: 4px solid var(--COLOUR-FIVE);
