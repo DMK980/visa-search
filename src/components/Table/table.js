@@ -10,19 +10,24 @@ export const Table = ()=>{
     const [route,setRoute] = useState("Skilled Worker")
     const [city, setCity] = useState("Ballymena")
     const [rating, setRating] = useState("Worker(A rating)")
+    // const [idarray, setidarray] = useState(["companyname0","companyname1"])
 
     const changebordercolour = (id,option)=>{
         let parent = document.getElementById(id).parentElement
         let style = getComputedStyle(document.body)
         // gets parent element and changes border colour when checked
         if (option === "add"){
-            console.log("added style.bordercolor to red")
             parent.style.borderColor = style.getPropertyValue("--COLOUR-THREE")
-            console.log(parent)
         } else if (option === "remove"){
-            console.log("removed style.bordercolor to white")
             parent.style.removeProperty("border-color")
-            console.log(parent)
+        }
+    }
+    
+    const uncheckCheckbox = (id)=>{
+        let index = id.slice(-1)
+        let checkboxelem = document.getElementById(`info${index}`)
+        if (checkboxelem.checked){
+            checkboxelem.checked = false
         }
     }
 
@@ -38,27 +43,31 @@ export const Table = ()=>{
         setRoute(routeinfo)
         setCity(cityinfo)
         setRating(ratinginfo)
-
     }
 
     const handlechecked = (e)=>{
-        // set the clicked element to checked and check if its already checked
+        // data needed
         let option = "add"
         let id = e.target.id
+
+        // change data for side bar
         changeInfo(id)
 
         if (checkedElement === id){
-            console.log("If checkedelement === id then")
             option = "remove"
-            console.log(option)
             changebordercolour(id,option)
             setCheckedElement()
-            
+    
         } else {
+            if (checkedElement !== undefined){
+                option = "remove"
+                changebordercolour(checkedElement,option)
+                uncheckCheckbox(checkedElement)
+            }
             option = "add"
             changebordercolour(id,option)
             setCheckedElement(id)
-        } 
+        }   
     }
 
     return (
@@ -91,3 +100,25 @@ export const Table = ()=>{
         </div>
     )
 }
+
+
+// if (idarray.includes(id)){
+            
+// }
+
+// for (let i in idarray){
+//     if (idarray[i] === id){
+
+//     }
+// }
+
+// if (checkedElement === id){
+//     option = "remove"
+//     changebordercolour(id,option)
+//     setCheckedElement()
+    
+// } else {
+//     option = "add"
+//     changebordercolour(id,option)
+//     setCheckedElement(id)
+// }
