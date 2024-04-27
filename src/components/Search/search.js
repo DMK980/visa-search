@@ -11,7 +11,7 @@ export const Search = ()=>{
     const selector = useSelector(state => state.input.value);
 
     const pageSwitch = ()=>{
-        navigate(`/search`) 
+        navigate(`/search`)  
     }
 
     const updatestate = (e)=>{

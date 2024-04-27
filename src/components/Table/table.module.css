@@ -8,6 +8,8 @@
 .tableContainer{
     width: 30rem;
     padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 /* Styling for the Compnay names container LEFT */
 .companyContainer{
@@ -64,10 +66,6 @@
 .checkbox{
     display: none;
 }
-.checkbox:checked + label + .companyInfo{
-    display: inline-flex;
-    
-}
 
 .companyRow:hover , .companyName{
     border-color: var(--COLOUR-THREE);
@@ -116,12 +114,46 @@
     padding-top: 2rem;
 }
 
+/* Pagination styles */
+.pagination{
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: 4px solid var(--COLOUR-FIVE);
+    color: var(--COLOUR-FIVE);
+}
+.faChevronLeft,.faChevronRight{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.faChevronLeft:hover{
+    color: var(--COLOUR-THREE);
+    font-size: 2.5rem;
+}
+.faChevronRight:hover{
+    color: var(--COLOUR-THREE);
+    font-size: 2.5rem;
+}
+.pagenumbercontainer{
+    /* border: 2px solid var(--COLOUR-FIVE); */
+    padding: 1rem;
+}
+.currentpage,.lastpage{
+    padding: 0.5rem;
+}
+
 @media screen and (max-width:1022px) {
     .tableSideInfoContainer{
         display: none;
     }
     .tableContainer{
         width: 40rem;
-    }  
+    } 
+    .checkbox:checked + label + .companyInfo{
+        display: inline-flex;
+        
+    } 
 }
 

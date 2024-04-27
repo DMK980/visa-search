@@ -73,17 +73,4 @@
         color: var(--COLOUR-THREE);
     }
 }
-/* toggle styling and logic */
-.input{
-    display: none;
-}
-.toggle_dark{
-   
-   display: none;
-}
-.input:checked ~ .toggle_light{
-    display: none;
-}
-.input:checked ~ .toggle_dark{
-    display:contents;
-}
+

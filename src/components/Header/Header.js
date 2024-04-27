@@ -1,8 +1,5 @@
-
 import Header from "./Header.module.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faSun} from "@fortawesome/free-solid-svg-icons"
-import {faMoon} from "@fortawesome/free-solid-svg-icons"
 import {faBars}from "@fortawesome/free-solid-svg-icons";
 
 
@@ -19,19 +16,6 @@ export const HeaderComponent = ()=>{
                         {/* LINKS TO OTHER PAGES */}
                         <li className={Header.links}>
                             <a className={`${Header.links_a} ${Header.links_a_search}`}href="/">Home</a>
-                        </li>
-                        {/* <li className={Header.links}>
-                            <a className={`${Header.links_a} ${Header.links_a_submit}`}href="/Stats">Stats</a>
-                        </li> */}
-                        <li className={Header.links}>
-                            {/* Light and Dark toggle */}
-                            <input className={Header.input}id="toggle"type="checkbox"/>
-                            <label className={Header.toggle_light}htmlFor="toggle">
-                                <FontAwesomeIcon icon={faSun} style={{color: "#2e3532"}} />
-                            </label> 
-                            <label className={Header.toggle_dark}htmlFor="toggle">
-                                <FontAwesomeIcon icon={faMoon} style={{color: "#2e3532"}} />
-                            </label> 
                         </li>
                     </ul>
                 </nav>
