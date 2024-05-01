@@ -1,21 +1,25 @@
 import table from "./table.module.css"
-import {data} from "./demodata"
 import {useState} from "react"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faChevronLeft} from "@fortawesome/free-solid-svg-icons"
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons"
+import{useSelector} from "react-redux"
+
 
 
 
 export const Table = ()=>{
-
+    
     const [checkedElement,setCheckedElement] = useState();
     const [companyName,setCompanyName] = useState("McMullan Shellfish");
     const [route,setRoute] = useState("Skilled Worker");
     const [city, setCity] = useState("Ballymena");
     const [rating, setRating] = useState("Worker(A rating)");
     const [currentpage,setCurrentpage] = useState(1);
-    const [lastpage,setlastpage] = useState(10);
+    const [itemsperPage,setitemsperPage] = useState([0,20]);
+
+    const companieslist = useSelector((state)=>state.Companies.values)
+    const searchinput = useSelector((state)=> state.input.value)
 
     const changebordercolour = (id,option)=>{
         let parent = document.getElementById(id).parentElement
@@ -79,43 +83,72 @@ export const Table = ()=>{
     }
     const PageNumber = (e)=>{
         if (e.target.id === "left-chevron"){
-            if (currentpage > 1){
+            if(currentpage > 1){
                 setCurrentpage(currentpage - 1)
+                if (itemsperPage[0] === 1){
+                } else {
+                    setitemsperPage([itemsperPage[0]-20,itemsperPage[1]-20]) 
+                }
             }
         } else if (e.target.id === "right-chevron"){
-            if (currentpage < lastpage){
-                setCurrentpage(currentpage + 1)
-            }
-        }   
+            setCurrentpage(currentpage + 1)
+            setitemsperPage([itemsperPage[0]+20,itemsperPage[1]+20])
+        }  
     }
-
+    const listOfCompanies = companieslist.map((company,index)=>{ 
+        if (index >= itemsperPage[0] & index < itemsperPage[1]){
+            return (
+                <div key={index}className={`${table.companyRow}`} id ={`companyRow${index}`}>
+                    <input key={index}className={table.checkbox}type="checkbox" id={`info${index}`} />
+                    <label className={`${table.companyName}`} id = {`companyName${index}`}htmlFor={`info${index}`}onClick={handlechecked}><span className={table.companyIndex}>{index + 1}.</span>{company["Organisation Name"]}</label>
+                    <div className={table.companyInfo}>
+                        <p className={`${table.companystat} ${table.companystat1}`} id ={`companyRoute${index}`}><span className={table.companyInfoHeading}>Route: </span>{company.Route}</p>                                
+                        <p className={`${table.companystat} ${table.companystat2}`} id ={`companyCity${index}`}><span className={table.companyInfoHeading}>City: </span>{company["Town/City"]}</p>
+                        <p className={`${table.companystat} ${table.companystat3}`} id ={`companyStat${index}`}><span className={table.companyInfoHeading}>Rating: </span>{company["Type & Rating"]}</p>
+                    </div>
+                </div>
+            ) 
+        }
+    })
+    const searchlist = companieslist.filter((company)=>{
+        let companyname = company["Organisation Name"].toLowerCase();
+        let searchterm = searchinput.toLowerCase()
+        if (searchterm !== "company name here"){
+            if (companyname.startsWith(searchterm)){
+                return company
+            } 
+        }
+    }).map((company,index)=>{
+        if (index >= itemsperPage[0] & index < itemsperPage[1]){
+            return (
+                    <div key={index}className={`${table.companyRow}`} id ={`companyRow${index}`}>
+                        <input key={index}className={table.checkbox}type="checkbox" id={`info${index}`} />
+                        <label className={`${table.companyName}`} id = {`companyName${index}`}htmlFor={`info${index}`}onClick={handlechecked}><span className={table.companyIndex}>{index + 1}.</span>{company["Organisation Name"]}</label>
+                        <div className={table.companyInfo}>
+                            <p className={`${table.companystat} ${table.companystat1}`} id ={`companyRoute${index}`}><span className={table.companyInfoHeading}>Route: </span>{company.Route}</p>                                
+                            <p className={`${table.companystat} ${table.companystat2}`} id ={`companyCity${index}`}><span className={table.companyInfoHeading}>City: </span>{company["Town/City"]}</p>
+                            <p className={`${table.companystat} ${table.companystat3}`} id ={`companyStat${index}`}><span className={table.companyInfoHeading}>Rating: </span>{company["Type & Rating"]}</p>
+                        </div>
+                    </div>
+            ) 
+        }
+    })
     return (
         <div className={table.mainContainer}>
             <div className={table.tableContainer}>
                 <div className={table.companyContainer}>
-                    {data.map((company,index)=>{
-                        if (true){
-                            return (
-                                <div key={index}className={`${table.companyRow}`} id ={`companyRow${index}`}>
-                                    <input key={index}className={table.checkbox}type="checkbox" id={`info${index}`} />
-                                    <label className={`${table.companyName}`} id = {`companyName${index}`}htmlFor={`info${index}`}onClick={handlechecked}><span className={table.companyIndex}>{index + 1}.</span>{company.Organisation_Name}</label>
-                                    <div className={table.companyInfo}>
-                                        <p className={`${table.companystat} ${table.companystat1}`} id ={`companyRoute${index}`}><span className={table.companyInfoHeading}>Route: </span>{company.Route}</p>                                
-                                        <p className={`${table.companystat} ${table.companystat2}`} id ={`companyCity${index}`}><span className={table.companyInfoHeading}>City: </span>{company.Town_City}</p>
-                                        <p className={`${table.companystat} ${table.companystat3}`} id ={`companyStat${index}`}><span className={table.companyInfoHeading}>Rating: </span>{company.Type_Rating}</p>
-                                    </div>
-                                </div>
-                            ) 
-                        }
-                        return ""
-                    })}
+                    {searchlist.length ? searchlist : listOfCompanies}
                 </div>
                 <div className={table.pagination}>
-                    <FontAwesomeIcon id="left-chevron"onClick={PageNumber}className={table.faChevronLeft}icon={faChevronLeft} />
-                    <div className={table.pagenumbercontainer}>
-                        <p className={table.pagenumber}><span  className={table.currentpage}>{currentpage}</span>/<span className={table.lastpage}>{lastpage}</span></p>
+                    <div id="left-chevron"onClick={PageNumber}>
+                        <FontAwesomeIcon id="left-chevron"onClick={PageNumber}className={table.faChevronLeft}icon={faChevronLeft} />
                     </div>
-                    <FontAwesomeIcon id="right-chevron"onClick={PageNumber}className={table.faChevronRight}icon={faChevronRight} />       
+                    <div className={table.pagenumbercontainer}>
+                        <p className={table.pagenumber}><span  className={table.currentpage}>{currentpage}</span></p>
+                    </div>
+                    <div id="right-chevron"onClick={PageNumber}>
+                        <FontAwesomeIcon id="right-chevron"className={table.faChevronRight}icon={faChevronRight} /> 
+                    </div>      
                 </div>
             </div>
             <div className={table.tableSideInfoContainer}>

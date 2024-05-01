@@ -16,6 +16,9 @@ export const Search = ()=>{
 
     const updatestate = (e)=>{
         dispatch(inputchange(e.target.value))
+        if (e.target.value === ""){
+            dispatch(inputchange("Company name here"))
+        }
     }
 
     return(
