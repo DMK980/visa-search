@@ -7,6 +7,7 @@ const serverquery = async ()=>{
         const response = await fetch("/companies_list",{method:"GET"})
         const data = await response
         companies = Object.values(data)
+        console.log(companies["0"])
     } catch (error) {
         console.log(error)  
     }
