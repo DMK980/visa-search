@@ -4,16 +4,7 @@ const serverquery = async ()=>{
     let companies;
 
     try {
-        const response = await fetch("/companies_list",{
-        method:"GET",
-        mode:"cors",
-        headers:{
-            "Content-Type": "application/json",
-            'Access-Control-Allow-Origin':'*',
-            'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
-        }
-        })
-
+        const response = await fetch("/companies_list",{method:"GET"})
         const data = await response.json()
         companies = Object.values(data)
     } catch (error) {
