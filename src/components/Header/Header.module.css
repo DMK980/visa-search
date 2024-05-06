@@ -35,6 +35,10 @@
 .links_a{
     text-decoration: none;
     color: var(--COLOUR-ONE);
+    border: none;
+    background-color: var(--COLOUR-TWO);
+    font-size: var(--font-size-3);
+
 }
 .links_a:hover{
     color: var(--COLOUR-THREE);

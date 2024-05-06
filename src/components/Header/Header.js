@@ -1,9 +1,17 @@
 import Header from "./Header.module.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faBars}from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 
 export const HeaderComponent = ()=>{
+
+    const navigate = useNavigate();
+
+    const handleclick = ()=>{
+        navigate("/")
+        
+    }
 
     return (
         <header className={Header.header_container}>
@@ -15,7 +23,7 @@ export const HeaderComponent = ()=>{
                     <ul className={Header.navbar_list}> 
                         {/* LINKS TO OTHER PAGES */}
                         <li className={Header.links}>
-                            <a className={`${Header.links_a} ${Header.links_a_search}`}href="/">Home</a>
+                            <button className={`${Header.links_a} ${Header.links_a_search}`}onClick={handleclick}>Home</button>
                         </li>
                     </ul>
                 </nav>

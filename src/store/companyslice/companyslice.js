@@ -4,7 +4,7 @@ const serverquery = async ()=>{
     let companies;
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/companies_list",{
+        const response = await fetch("/companies_list",{
         method:"GET",
         mode:"cors",
         headers:{
