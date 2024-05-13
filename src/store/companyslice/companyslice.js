@@ -1,22 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { data } from "./companydata.js"
 
-const serverquery = async ()=>{
-    let companies;
+// const serverquery = async ()=>{
+//     let companies;
 
-    try {
-        const response = await fetch("/companies_list")
-        const data = response
-        companies = Object.values(data)
-        console.log(companies)
-    } catch (error) {
-        console.log(error)  
-    }
+//     try {
+//         const response = await fetch("/companies_list")
+//         const data = response
+//         companies = Object.values(data)
+//         console.log(companies)
+//     } catch (error) {
+//         console.log(error)  
+//     }
 
-    return companies
-}
+//     return companies
+// }
 
 const initialState = {
-    values: await serverquery()
+    values: Object.values(data)
 }
 
 const companyslice = createSlice({
